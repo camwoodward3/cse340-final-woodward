@@ -1,17 +1,16 @@
-import { jedi } from "../data/jedi.js";
-import { hrJedi } from "../data/hrjedi.js";
-import { orJedi } from "../data/orjedi.js";
-import { clones } from "../data/clone.js";
-import { mandalorians } from "../data/mandalorian.js";
+import { jedi } from "./models/jedi.js";
+import { hrJedi } from "./models/hrjedi.js";
+import { orJedi } from "./models/orjedi.js";
+import { clones } from "./models/clone.js";
+import { mandalorians } from "./models/mandalorian.js";
 
 
-function convertHTML(item, index, type) {
     const colorClass = item.lightsaber ? item.lightsaber.toLowerCase() : "none";
 
     const modalId = `${item.type || type}-modal-${index}`;
     return `
     <div>
-        <div id="${modalId}" class="modal" role="dialog" aria-hidden="true" aria-modal="true>
+        <div id="${modalId}" class="modal" role="dialog" aria-hidden="true" aria-modal="true">
             <div class="modal-body">
                     <div class="modal-content ${colorClass}">
                         <span class="close-button" aria-label="Close modal">&times;</span>
@@ -95,7 +94,7 @@ function convertHTML(item, index, type) {
         </div>
     </div>
     `;
-}
+
 
 function renderJediList(filteredJedi) {
     const container = document.querySelector("#character-container");
@@ -108,7 +107,7 @@ function renderJediList(filteredJedi) {
 }
 
 function renderCloneList(filteredClones) {
-    const container = document.querySelector("#clone-container");
+    const container = document.querySelector("#clone-container")
     if (container) {
         container.innerHTML = filteredClones.map((clone, index) => convertHTML(clone, index, "clone")).join('');
         setUpEventListeners();
@@ -179,6 +178,15 @@ function setUpEventListeners() {
         });
     }
 
+    document.querySelectorAll(".modal").forEach(modal => {
+        modal.addEventListener("click", e => {
+            if (e.target === modal) {
+                modal.classList.remove("open");
+                modal.setAttribute("aria-hidden", "true");
+            }
+        })
+    })
+
 function getValue(selector) {
     const el = document.querySelector(selector);
     return el ? el.value : "All";
@@ -238,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderJediList([...jedi, ...hrJedi, ...orJedi]);
     renderCloneList(clones);
     renderMandalorianList(mandalorians);
+    setUpEventListeners();
     
     document.querySelectorAll("select").forEach(select => {
         select.addEventListener("change", filter);

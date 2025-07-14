@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 <main>
-    <h1><%= title %></h1>
+    <h1><%- title %></h1>
         <section id="jedi" class="content-section">
       <div class="selectors">
         <div class="eras">
@@ -81,8 +81,10 @@
         <div class="species">
           <label for="species">Species:</label>
           <select id="species-tags" name="species">
-            <option value="All"></option>
-            <option value="Human">Human</option>
+            <div class="option" data-value="Human">
+              <img src="images/profiles/Human.jpeg" />
+              <span>Human</span>
+            </div>
             <option value="Twi'lek">Twi'lek</option>
             <option value="Mirialan">Mirialan</option>
             <option value="Zabrak">Zabrak</option>
@@ -199,6 +201,19 @@
         </div>
       </div>
     </section>
-    <section id="character-container"></section>
+    <section id="character-container">
+      <% jediList.forEach(function(item, index) { 
+        const colorClass = item.lightsaber ? item.lightsaber.toLowerCase() : "none";
+      %>
+        <div class="character <%= item.rank %>">
+          <img src="<%= item.imgSrc %>" alt="<%= item.name %>" />
+          <button class="<%= item.lightsaber %>"><a href="/index/<%= item.id %>"><%= item.name %></a></button>
+        </div> 
+
+      <% }); %>
+      <button class="add-button-container">
+        <a href="/jedi/add" class="add-button">➕ Add a New Jedi</a>
+      </button>
+    </section>
   </main>
 <%- include('partials/footer') %>

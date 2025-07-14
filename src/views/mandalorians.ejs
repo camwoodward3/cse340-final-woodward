@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 <main>
+    <h1><%- title %></h1>
     <section id="mandalorian" class="content-section hidden">
-      <h1>Mandalorian Section</h1>
       <div class="selectors">
         <div class="clans">
           <label for="clans">Clans:</label>
@@ -35,7 +35,18 @@
           </select>
         </div>
       </div>
-      <section id="mandalorian-container"></section>
+      <section id="mandalorian-container">
+        <% mandalorianList.forEach(function(item, index) {
+          const modalId = `modal-${index}`;
+          const colorClass = item.clan ? item.clan.toLowerCase() : "none";
+        %>
+          <% let modalID = 'modal-' + index; %>
+          <div class="character">
+            <img src="<%= item.imgSrc %>" alt="<%= item.name %>" />
+            <button class="open-modal button <%= item.clan %>" data-target="<%= modalID %>"><%= item.name %></button>
+          </div>
+        <% }); %>
+      </section>
     </section>
 </main>
 

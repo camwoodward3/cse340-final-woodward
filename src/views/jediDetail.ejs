@@ -1,0 +1,54 @@
+<%- include('partials/header', { title }) %>
+
+<main class="detail-page <%= character.lightsaber.toLowerCase() %>">
+    <img src="<%= character.imgSrc2 %>" alt="<%= character.name %>">
+    <h1><%= character.name %><% if (character.name2) { %>(<%= character.name2 %>) <%} %>
+    </h1>
+
+
+    <section class="biographic">
+        <h2>Biographical Information</h2>
+        <% if (character.homeworld) { %><p><strong>Homeworld:</strong> <%= character.homeworld %></p><% } %>
+        <% if (character.birth) { %><p><strong>Birth:</strong> <%= character.birth %></p><% } %>
+        <% if (character.death) { %><p><strong>Death:</strong> <%= character.death %></p><% } %>
+    </section>
+    <section class="descriptive">
+        <h2>Descriptive Information</h2>
+        <% if (character.species) { %><p><strong>Species:</strong> <%= character.species %></p><% } %>
+        <% if (character.gender) { %><p><strong>Gender:</strong> <%= character.gender %></p><% } %>
+        <% if (character.masters) { %><p><strong>Jedi Master(s):</strong> <%= character.masters %></p><% } %>
+        <% if (character.padawans) { %><p><strong>Jedi Padawan(s):</strong> <%= character.padawans %></p> <% } %>
+        <% if (character.lightsaber) { %><p><strong>Lightsaber:</strong> <%= character.lightsaber %></p><% } %>
+        <% if (character.midochlorians) { %><p><strong>Midochlorians:</strong> <%= character.lightsaber %></p><% } %>
+    </section>
+    <section class="family">
+        <h2>Family</h2>
+        <% if (character.father) { %><p><strong>Father:</strong> <%= character.father %></p><% } %> 
+        <% if (character.mother) { %><p><strong>Mother:</strong> <%= character.mother %></p><% } %>  
+        <% if (character.siblings) { %><p><strong>Siblings:</strong> <%= character.siblings %></p><% } %>       
+        <% if (character.spouse) { %><p><strong>Spouse:</strong> <%= character.spouse %></p><% } %>
+        <% if (character.children) { %><p><strong>Children:</strong> <%= character.children %></p><% } %>  
+    </section>
+    <section class="chronological">
+        <h2>Chronological Information</h2>
+        <% if (character.council) { %><p><strong>Jedi High Council -</strong> <%= character.council %></p><% } %> 
+        <% if (character.clan) { %><p><strong>Jedi Initiate Clan:</strong> <%= character.clan %></p><% } %> 
+        <% if (character.assault) { %><p><strong>Jedi Assault Team -</strong> <%= character.assault %></p><% } %> 
+        <% if (character.alliance) { %><p><strong>Rebel Alliance -</strong> <%= character.alliance %></p><% } %> 
+        <% if (character.luke) { %><p><strong>New Jedi Order:</strong> <%= character.luke %></p><% } %> 
+        <% if (character.resistance) { %><p><strong>Resistance:</strong> <%= character.resistance %></p><% } %> 
+    </section>
+    <section class="events">
+        <h2>Events Information</h2>
+        <% if (character.clone) { %><p><strong>Clone Wars:</strong> <%= character.clone %></p><% } %> 
+        <% if (character.order66) { %><p><strong>Order 66 - </strong> <%= character.order66 %></p><% } %> 
+        <% if (character.galactic) { %><p><strong>Galactic Civil War:</strong> <%= character.galactic %></p><% } %> 
+        <% if (character.newWar) { %><p><strong>First Order-Resistance War:</strong> <%= character.newWar %></p><% } %> 
+    </section>
+
+
+
+</main>
+
+
+<%- include('partials/footer') %>

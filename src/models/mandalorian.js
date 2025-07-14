@@ -227,7 +227,7 @@ export const mandalorians =  [
     },
     {
         id: 17,
-        imgSrc: 'images/mandalorians/Fenn_Rau.jpg',
+        imgSrc: 'images/mandalorians/FennRau.webp',
         name: 'Fenn Rau',
         homeworld: 'Concord Dawn',
         species: 'Human',

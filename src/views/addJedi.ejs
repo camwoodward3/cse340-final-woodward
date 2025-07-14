@@ -1,0 +1,158 @@
+<%- include('partials/header') %>
+<h1>Add a New Jedi</h1>
+<form action="/jedi/add" method="POST">
+    <label>Name: <input type="text" name="name" required></label><br>
+    <h3>Biographical Information</h3>
+    <label for="birth">Birth: <input type="text" name="birth"></label>
+    <label for="birthplace">Birthplace: <input type="text" name="birthplace"></label>
+    <label for="death">Death: <input type="text" name="death"></label>
+    <label for="deathplace">Deathplace: <input type="text" name="deathplace"></label>
+    <h3>Descriptive Information</h3>
+    <label for="species" class="add_label">Species:</label>
+    <select id="species-tags" name="species" class="add_select">
+        <option value=""></option>
+        <option value="Human">Human</option>
+        <option value="Wookiee">Wookiee</option>
+        <option value="Ewok">Ewok</option>
+        <option value="Hutt">Hutt</option>
+        <option value="Yoda's species">Yoda's Species</option>
+        <option value="Torguta">Togruta</option>
+        <option value="Twi'lek">Twi'lek</option>
+        <option value="Zabrak">Zabrak</option>
+        <option value="Mirialan">Mirialan</option>
+        <option value="Nautolan">Nautolan</option>
+        <option value="Kel Dor">Kel Dor</option>
+        <option value="Cerean">Cerean</option>
+        <option value="Dathomirian">Dathomirian</option>
+        <option value="Mon Calamari">Mon Calamari</option>
+        <option value="Duros">Duros</option>
+        <option value="Bith">Bith</option>
+        <option value="Rodian">Rodian</option>
+        <option value="Nikto">Nikto</option>
+        <option value="Gran">Gran</option>
+        <option value="Chagrian">Chagrian</option>
+        <option value="Iktotchi">Iktotchi</option>
+        <option value="Besalisk">Besalisk</option>
+        <option value="Tholothian">Tholothian</option>
+        <option value="Zygerrian">Zygerrian</option>
+        <option value="Pantoran">Pantoran</option>
+        <option value="Ongree">Ongree</option>
+        <option value="Vurk">Vurk</option>
+        <option value="Trandoshan">Trandoshan</option>
+        <option value="Ithorian">Ithorian</option>
+        <option value="Tchuukthai">Tchuukthai</option>
+        <option value="Kotabi">Kotabi</option>
+        <option value="Thisspiasian">Thississpian</option>
+        <option value="Cosian">Cosian</option>
+        <option value="Kiffar">Kiffar</option>
+        <option value="Chiss">Chiss</option>
+        <option value="Miraluka">Miraluka</option>
+        <option value="Cathar">Cathar</option>
+        <option value="Zeltron">Zeltron</option>
+        <option value="Queriman">Queriman</option>
+        <option value="Arkanian">Arkanian</option>
+        <option value="Lasat">Lasat</option>
+        <option value="Selkath">Selkath</option>
+        <option value="Weequay">Weequay</option>
+        <option value="Lannik">Lannik</option>
+        <option value="Pau'an">Pau'an</option>
+        <option value="Anx">Anx</option>
+        <option value="Bothan">Bothan</option>
+        <option value="Sullustan">Sullustan</option>
+        <option value="Ugor">Ugor</option>
+        <option value="Theelin">Theelin</option>
+        <option value="Umbaran">Umbaran</option>
+        <option value="Mikkian">Mikkian</option>
+        <option value="Caamasi">Caamasi</option>
+        <option value="Aloxian">Aloxian</option>
+        <option value="Dug">Dug</option>
+        <option value="Falleen">Falleen</option>
+        <option value="Feeorin">Feeorin</option>
+        <option value="Frozian">Frozian</option>
+        <option value="Halaisi">Halaisi</option>
+        <option value="Ho'Din">Ho'Din</option>
+        <option value="Ikkrukian">Ikkrukian</option>
+        <option value="Khli">Khli</option>
+        <option value="Klatoonian">Klatoonian</option>
+        <option value="Krevaaki">Krevaaki</option>
+        <option value="Kyuzo">Kyuzo</option>
+        <option value="Kessurian">Kessurian</option>
+        <option value="Nagai">Nagai</option>
+        <option value="Nazzar">Nazzar</option>
+        <option value="Parwan">Parwan</option>
+        <option value="Pooba">Pooba</option>
+        <option value="Roonan">Roonan</option>
+        <option value="Sarkhai">Sarkhai</option>
+        <option value="Skrilling">Skrilling</option>
+        <option value="Soikan">Soikan</option>
+        <option value="Tarnab">Tarnab</option>
+        <option value="Bravaisian">Bravaisian</option>
+        <option value="Azumel">Azumel</option>
+        <option value="Alcedian">Alcedian</option>
+        <option value="Celegian">Celegian</option>
+        <option value="Draethos">Draethos</option>
+        <option value="Latero">Latero</option>
+        <option value="Whiphid">Whiphid</option>
+    </select>
+    <label for="rank" class="add_label">Ranks:</label>
+    <select id="ranks-tags" name="ranks" class="add_select">
+        <option value=""></option>
+        <option value="Grand Master">Grand Master</option>
+        <option value="Jedi Master">Jedi Master</option>
+        <option value="Jedi Knight">Jedi Knight</option>
+        <option value="Jedi Padawan">Jedi Padawan</option>
+        <option value="Jedi Youngling">Jedi Youngling</option>
+        <option value="Jedi Temple Guard">Jedi Temple Guard</option>
+    </select>
+    <label for="lightsaber" class="add_label">Lightsaber:</label>
+    <select id="lightsaber-tags" name="lightsabers" class="add_select">
+        <option value=""></option>
+        <option value="Blue" class="blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Purple">Purple</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Red">Red</option>
+        <option value="White">White</option>
+        <option value="Cyan">Cyan</option>
+        <option value="Magenta">Magenta</option>
+        <option value="Indigo">Indigo</option>
+        <option value="Orange">Orange</option>
+    </select>
+    <h4>Jedi Master(s)</h4>
+    <div id="masters-wrapper">
+        <input type="text" name="masters" placeholder="Enter a Master">
+    </div>
+    <button type="button" onclick="addInput('masters-wrapper', 'masters')">Add Another Master</button>
+
+
+    <h4>Jedi Padawan(s)</h4>
+    <label for="padawans">Padawan: <input type="text" name="padawans"></label>
+    <h3>Family Information</h3>
+    <label for="father">Father: <input type="text" name="father"></label>
+        <label for="mother">Mother: <input type="text" name="mother"></label>
+        <label for="siblings">Sibling: <input type="text" name="siblings"></label>
+        <label for="spouse">Spouse: <input type="text" name="spouse"></label>
+        <label for="children">Child: <input type="text" name="children"></label>
+<label for="eras" class="add_label">Eras:</label>
+<select id="era-tags" name="era" class="add_select">
+    <option value=""></option>
+        <option value="Dawn of the Jedi">Dawn of the Jedi (25,000 BBY-)</option>
+        <option value="Old Republic">Old Republic (5000-1000 BBY)</option>
+        <option value="High Republic">High Republic (500-100 BBY)</option>
+        <option value="Fall of the Jedi">Fall of the Jedi (100-19 BBY)</option>
+        <option value="Reign of the Empire">Reign of the Empire (19 BBY-4 ABY)</option>
+        <option value="New Republic">New Republic (5-28 ABY)</option>
+        <option value="Rise of the First Order">Rise of the First Order (28-35 ABY)</option>
+        <option value="New Jedi Order">New Jedi Order (35-???? ABY)</option>
+    </select>
+    
+    <h3>Groups</h3>
+    <div id="groups-container"></div>
+    <h3>Events</h3>
+    <div id="events-container"></div>
+
+    <button type="submit">Add Character</button>
+</form>
+
+
+<script type="module" src="/js/dropdown.js"></script>

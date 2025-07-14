@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 <main>
-    <section id="clone" class="content-section">
-      <h1>Clone Section</h1>
+      <h1><%- title %></h1>
+        <section id="clones" class="content-section">
         <div class="selectors">
           <div class="legions">
             <label for="legions">Legions:</label>
@@ -25,7 +25,6 @@
             </select>
           </div>
           <div class="ranks">
-  
             <label for="ranks">Ranks:</label>
             <select id="ranks-tags" name="rank">
               <option value="All"></option>
@@ -47,9 +46,20 @@
               <option value="ARF Scout Trooper Sergeant">ARF Scout Trooper Sergeant</option>
               <option value="Private">Private</option>
             </select>
+            </div>
           </div>
+        </section>
+    <section id="clone-container">
+      <% cloneList.forEach(function(item, index) {
+        const modalID = `modal-${index}`;
+        const colorClass = item.legion ? item.legion.toLowerCase() : "none";
+      %>
+          <div class="character">
+            <img src="<%= item.imgSrc %>" alt="<%= item.name %>" />
+            <button class="open-modal button <%= item.legion %>" data-target="<%= modalID %>"><%= item.name %></button>
+          </div>
+      <% }); %>
     </section>
-    <section id="clone-container"></section>
 </main>
 
 <%- include('partials/footer') %>
