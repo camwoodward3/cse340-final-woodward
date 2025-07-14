@@ -1,0 +1,204 @@
+<%- include('partials/header') %>
+<main>
+    <h1><%= title %></h1>
+        <section id="jedi" class="content-section">
+      <div class="selectors">
+        <div class="eras">
+          <label for="eras">Eras:</label>
+          <select id="era-tags" name="era">
+            <option value="All"></option>
+            <option value="Dawn of the Jedi">Dawn of the Jedi</option>
+            <option value="Old Republic">Old Republic</option>
+            <option value="High Republic">High Republic</option>
+            <option value="Fall of the Jedi">Fall of the Jedi</option>
+            <option value="Reign of the Empire">Reign of the Empire</option>
+            <option value="Age of Rebellion">Age of Rebellion</option>
+            <option value="New Republic">New Republic</option>
+            <option value="Rise of the First Order">Rise of the First Order</option>
+            <option value="New Jedi Order">New Jedi Order</option>
+          </select>
+        </div>
+        <div class="events">
+          <label for="events">Events:</label>
+          <select id="event-tags" name="event">
+            <option value="All"></option>
+            <option value="The Great Hyperspace War">The Great Hyperspace War</option>
+            <option value="Beast Wars on Onderon">Beast Wars on Onderon</option>
+            <option value="Freedon Nadd Uprisings">Freedon Nadd Uprisings</option>
+            <option value="Krath Holy Crusade">Krath Holy Crusade</option>
+            <option value="The Great Sith War">The Great Sith War</option>
+            <option value="The Great Hunt">The Great Hunt</option>
+            <option value="Padawan Massacre">The Padawan Massacre</option>
+            <option value="Mandalorian Wars">Mandalorian Wars</option>
+            <option value="Jedi Civil War">Jedi Civil War</option>
+            <option value="First Jedi Purge">The First Jedi Purge</option>
+            <option value="Dark Wars">Dark Wars</option>
+            <option value="Eiram and E'ronoh War">Eiram and E'ronoh War</option>
+            <option value="Night of Sorrow">Night of Sorrow</option>
+            <option value="Starlight Beacon Conclave">Starlight Beacon Conclave</option>
+            <option value="Emergences">Emergences</option>
+            <option value="Nihil Conflict">Nihil Conflict</option>
+            <option value="Drengir Crisis">Drengir Crisis</option>
+            <option value="Stark Hyperspace War">Stark Hyperspace War</option>
+            <option value="Clone Wars">Clone Wars</option>
+            <option value="Galactic Civil War">Galactic Civil War</option>
+            <option value="First Order-Resistance War">First Order-Resistance War</option>
+          </select>
+        </div>
+        <div class="groups">
+          <label for="groups">Groups:</label>
+          <select id="group-tags" name="group">
+            <option value="All"></option>
+            <option value="Jedi High Council">Jedi High Council Members</option>
+            <option value="Sith">Sith</option>
+            <option value="The Jedi Covenant">The Jedi Covenant</option>
+            <option value="Brotherhood of the Sith">Brotherhood of the Sith</option>
+            <option value="Revanchists">Revanchists</option>
+            <option value="Order of Revan">Order of Revan</option>
+            <option value="First Jedi Purge Victims">First Jedi Purge Victims</option>
+            <option value="First Jedi Purge Survivors">First Jedi Purge Survivors</option>
+            <option value="Lost Jedi">Lost Jedi</option>
+            <option value="Master Sho's Pathfinder Team">Master Sho's Pathfinder team</option>
+            <option value="Witherbloom Pathfinder Team">Witherbloom Pathfinder Team</option>
+            <option value="Convocation of the Force">Convocation of the Force</option>
+            <option value="Luminous Nine">Luminous Nine</option>
+            <option value="Secondary Team">Secondary Team</option>
+            <option value="Red Group">Red Group</option>
+            <option value="Keeve's Crew">Keeve's Crew</option>
+            <option value="Kashyyyk Team">Kashyyyk Team</option>
+            <option value="Stormwall Defense Fleet">Stormwall Defense Fleet</option>
+            <option value="Scarlet Skulls">Scarlet Skulls</option>
+            <option value="Brendok Four">Brendok Four</option>
+            <option value="Jedi Assault Team">Jedi Assault Team</option>
+            <option value="Order 66 Survivors">Order 66 Survivors</option>
+            <option value="Order 66 Victims">Order 66 Victims</option>
+            <option value="Hidden Path">Hidden Path</option>
+            <option value="Rebel Alliance">Rebel Alliance</option>
+            <option value="Luke's Jedi Order">Luke's Jedi Order</option>
+            <option value="Resistance">Resistance</option>
+          </select>
+        </div>
+        <div class="species">
+          <label for="species">Species:</label>
+          <select id="species-tags" name="species">
+            <option value="All"></option>
+            <option value="Human">Human</option>
+            <option value="Twi'lek">Twi'lek</option>
+            <option value="Mirialan">Mirialan</option>
+            <option value="Zabrak">Zabrak</option>
+            <option value="Miraluka">Miraluka</option>
+            <option value="Nautolan">Nautolan</option>
+            <option value="Togruta">Togruta</option>
+            <option value="Cathar">Cathar</option>
+            <option value="Kel Dor">Kel Dor</option>
+            <option value="Tholothian">Tholothian</option>
+            <option value="Yoda's Species">Yoda Species</option>
+            <option value="Nikto">Nikto</option>
+            <option value="Rodian">Rodian</option>
+            <option value="Weequay">Weequay</option>
+            <option value="Wookiee">Wookiee</option>
+            <option value="Cerean">Cerean</option>
+            <option value="Mikkian">Mikkian</option>
+            <option value="Ithorian">Ithorian</option>
+            <option value="Kiffar">Kiffar</option>
+            <option value="Selkath">Selkath</option>
+            <option value="Anx">Anx</option>
+            <option value="Alcedian">Alcedian</option>
+            <option value="Bith">Bith</option>
+            <option value="Chagrian">Chagrian</option>
+            <option value="Duros">Duros</option>
+            <option value="Human-Miraluka Hybrid">Human-Miraluka Hybrid</option>
+            <option value="Iktotchi">Iktotchi</option>
+            <option value="Kaleesh">Kaleesh</option>
+            <option value="Kotabi">Kotabi</option>
+            <option value="Mon Calamari">Mon Calamari</option>
+            <option value="Ongree">Ongree</option>
+            <option value="Pantoran">Pantoran</option>
+            <option value="Selonian">Selonian</option>
+            <option value="Zygerrian">Zygerrian</option>
+            <option value="Aloxian">Aloxian</option>
+            <option value="Arkanian Offshoot">Arkanian Offshoot</option>
+            <option value="Arkanian-Sephi Hybrid">Arkanian-Sephi Hybrid</option>
+            <option value="Azumel">Azumel</option>
+            <option value="Besalisk">Besalisk</option>
+            <option value="Bothan">Bothan</option>
+            <option value="Bravaisian">Bravaisian</option>
+            <option value="Caamasi">Caamasi</option>
+            <option value="Celegian">Celegian</option>
+            <option value="Chiss">Chiss</option>
+            <option value="Draethos">Draethos</option>
+            <option value="Dug">Dug</option>
+            <option value="Falleen">Falleen</option>
+            <option value="Feeorin">Feeorin</option>
+            <option value="Frozian">Frozian</option>
+            <option value="Gran">Gran</option>
+            <option value="Halaisi">Halaisi</option>
+            <option value="Ho'Din">Ho'Din</option>
+            <option value="Human-Echani Hybrid">Human-Echani Hybrid</option>
+            <option value="Ikkrukkian">Ikkrukkian</option>
+            <option value="Khli">Khli</option>
+            <option value="Klatoonian">Klatoonian</option>
+            <option value="Krevaaki">Krevaaki</option>
+            <option value="Kyuzo">Kyuzo</option>
+            <option value="Lannik">Lannik</option>
+            <option value="Lasat">Lasat</option>
+            <option value="Latero">Latero</option>
+            <option value="Lessurian">Lessurian</option>
+            <option value="Nagai">Nagai</option>
+            <option value="Nazzar">Nazzar</option>
+            <option value="Pau'an">Pau'an</option>
+            <option value="Parwan">Parwan</option>
+            <option value="Pooba">Pooba</option>
+            <option value="Quermian">Quermian</option>
+            <option value="Roonan">Roonan</option>
+            <option value="Sarkhai">Sarkhai</option>
+            <option value="Skrilling">Skrilling</option>
+            <option value="Soikan">Soikan</option>
+            <option value="Sullustan">Sullustan</option>
+            <option value="Tarnab">Tarnab</option>
+            <option value="Tchuukthai">Tchuukthai</option>
+            <option value="Theelin">Theelin</option>
+            <option value="Theelin-Human Hybrid">Theelin-Human Hybrid</option>
+            <option value="Thisspiasian">Thisspiasian</option>
+            <option value="Trandoshan">Trandoshan</option>
+            <option value="Ugor">Ugor</option>
+            <option value="Umbaran">Umbaran</option>
+            <option value="Vultan">Vultan</option>
+            <option value="Vurk">Vurk</option>
+            <option value="Whiphid">Whiphid</option>
+            <option value="Yarkora">Yarkora</option>
+            <option value="Zeltron">Zeltron</option>
+          </select>
+        </div>
+        <div class="ranks">
+          <label for="ranks">Jedi Ranks:</label>
+          <select id="rank-tags" name="rank">
+            <option value="All"></option>
+            <option value="Grand Master">Grand Masters</option>
+            <option value="Jedi Master">Jedi Masters</option>
+            <option value="Jedi Knight">Jedi Knights</option>
+            <option value="Jedi Padawan">Jedi Padawans</option>
+            <option value="Youngling">Younglings</option>
+          </select>
+        </div>
+        <div class="colors">
+          <label for="lightsaber-colors">Lightsaber colors:</label>
+          <select id="color-tags" name="color">
+            <option value="All"></option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Purple">Purple</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Cyan">Cyan</option>
+            <option value="Magenta">Magenta</option>
+            <option value="Indigo">Indigo</option>
+            <option value="Orange">Orange</option>
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section id="character-container"></section>
+  </main>
+<%- include('partials/footer') %>

@@ -1,0 +1,576 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+:root {
+
+/* Jedi */
+    --accent1-color: #002abc;
+    --text-light1: #5dd8ff; 
+    --text-dark1: #120e4e;
+    --accent2-color: #009d1a;
+    --text-light2: #45ffa5; 
+    --text-dark2: #014214;
+    --accent3-color: #9200d6;
+    --text-light3: #fcd0f1;
+    --text-dark3: #2f015d;
+    --accent4-color: #979aa8;
+    --text-light: white;
+    --text-dark4: #4a4d58;
+    --accent5-color: #ffd209;
+    --text-light5: #fbf9d3;
+    --text-dark5: #af7a00;
+    --accent6-color: #f24900;
+    --text-light6: #ffcfb1;
+    --text-dark6: #981302;
+    --accent7-color: #ff0000;
+    --text-light7: #ffbfb7;
+    --text-dark7: #500707;
+    --text-light8: #a199ff;
+    --accent8-color: #4f00f8;
+    --text-dark8: #000c65;
+    --text-light9: #b5edff;
+    --accent9-color: #068bff;
+    --text-dark9: #001f7b;
+    --font-primary: "Roboto Condensed", sans-serif;
+    --font-secondary: "Titillium Web", sans-serif;
+
+/* Clones */
+    --five-light: #356ca7;
+    --five-color: #003885;
+    --five-dark: #01072b;
+    --twelve-light: #ffb340;
+    --twelve-color: #ea7d17;
+    --twelve-dark: #bc4a04;
+    --fourth-light: #cac8c8;
+    --fourth_color: #8a8a8a;
+    --fourth-dark: #535353;
+    --bad-light: #7c7b7b;
+    --bad-color: #323232;
+    --bad-dark: #1a1a1a;
+    --guard-light: #d34242;
+    --guard-color: #7e0000;
+    --guard-dark: #450000;
+    --elite-light: #688a32;
+    --elite-color: #31521c;
+    --elite-dark: #253621;
+    --mobile-light: #cb8686;
+    --mobile-color: #ad6060;
+    --mobile-dark: #8b4343;
+    --domino-light: #50a84b;
+    --domino-color: #156a09;
+    --domino-dark: #073b08; 
+    --seven-light: #bcb2af;
+    --seven-color: #89827d;
+    --seven-dark: #5f5854;
+    --doom-light: #56b800;    
+    --doom-color: #367d00;   
+    --doom-dark: #174a01;
+    --koth-light: #81c17a;   
+    --koth-color: #387b41;
+    --koth-dark: #0f4417;
+    --rancor-light: #525986;
+    --rancor-color: #32355a;
+    --rancor-dark: #161835; 
+    --star-light: #ece44e;
+    --star-color: #cfb12d;    
+    --star-dark: #906c24;
+    --outer-light: #a45f27;
+    --outer-color: #7d3a13;
+    --outer-dark: #682100;    
+}
+
+header {
+    top: 0;
+    background: #000;
+    color: white;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}   
+
+header::after {
+    content: '';
+    display: block;
+    height: 4px;
+    box-shadow: 0 0 10px cyan;
+}
+
+
+body {
+    max-width: 1200px;
+    font-family: var(--font-primary);
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    padding: 20px;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+.selectors {
+    font-family: var(--font-secondary);    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    align-items: center;
+    gap: 50px;
+    padding: 30px;
+}
+
+.character {
+    padding: 20px;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: #999;
+}
+
+.character img {
+    width: 100%;
+    align-items: center;
+    object-fit: cover;
+}
+
+.button {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    outline: none;
+    font-family: var(--font-primary);
+    font-size: 1.2em;
+}
+
+#character-container, #clone-container, #mandalorian-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* 
+.hidden {
+    display: none;
+} */
+
+li {
+    list-style: none;
+    display: contents;
+    justify-content: space-between;
+}
+a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.green {
+    background: linear-gradient(180deg, var(--text-light2), var(--accent2-color), var(--text-dark2));
+    box-shadow: 0 0 15px var(--accent2-color), 0 0 30px var(--accent2-color);
+    color: white;
+    border: none;
+}
+
+.blue {
+    background: linear-gradient(180deg, var(--text-light1), var(--accent1-color), var(--text-dark1));
+    box-shadow: 0 0 15px var(--accent1-color), 0 0 30px var(--accent1-color);
+    color: white;
+    border: none;
+}
+
+.purple {
+    background: linear-gradient(180deg, var(--text-light3), var(--accent3-color), var(--text-dark3));
+    box-shadow: 0 0 15px var(--accent3-color), 0 0 30px var(--accent3-color);
+    color: white;
+    border: none;
+}
+
+.yellow {
+    background: linear-gradient(180deg, var(--text-light5), var(--accent5-color), var(--text-dark5));
+    box-shadow: 0 0 15px var(--accent5-color), 0 0 30px var(--accent5-color);
+    color: white;
+    border: none;
+}
+
+.cyan {
+    background: linear-gradient(180deg, var(--text-light9), var(--accent9-color), var(--text-dark9));
+    box-shadow: 0 0 15px var(--accent9-color), 0 0 30px var(--accent9-color);
+    color: white;
+    border: none;
+}
+
+.indigo {
+    background: linear-gradient(180deg, var(--text-light8), var(--accent8-color), var(--text-dark8));
+    box-shadow: 0 0 15px var(--accent8-color), 0 0 30px var(--accent8-color);
+    color: white;
+    border: none;
+}
+
+.orange {
+    background: linear-gradient(180deg, var(--text-light6), var(--accent6-color), var(--text-dark6));
+    box-shadow: 0 0 15px var(--accent6-color), 0 0 30px var(--accent6-color);
+    color: white;
+    border: none;
+}
+
+.red {
+    background: linear-gradient(180deg, var(--text-light7), var(--accent7-color), var(--text-dark7));
+    box-shadow: 0 0 15px var(--accent7-color), 0 0 30px var(--accent7-color);
+    color: white;
+    border: none;
+}
+
+.white, .unknown, .none {
+    background: linear-gradient(180deg, white, var(--accent4-color), var(--text-dark4));
+    box-shadow: 0 0 15px var(--accent4-color), 0 0 30px var(--accent4-color);
+    color: white;
+    border: none;
+}
+
+.blue-green {
+  background: linear-gradient(180deg, var(--text-light2), var(--accent2-color), var(--accent1-color), var(--text-dark1));
+    box-shadow: 0 0 15px var(--accent2-color), 0 0 30px var(--accent1-color);
+  color: white;
+  border: none;
+}
+.green-blue-purple {
+    background: linear-gradient(180deg, var(--text-light2), var(--accent2-color), var(--accent1-color), var(--accent3-color), var(--text-dark3));
+    box-shadow: 0 0 15px var(--accent3-color), 0 0 30px var(--accent1-color), 0 0 45px var(--accent2-color);
+    color: white;
+    border: none;
+}
+
+.modal-content.blue {
+    border-color: var(--accent1-color);
+    background: var(--text-dark1);
+}
+.modal-content.green {
+    border-color: var(--accent2-color);
+    background: var(--text-dark2);
+}
+.modal-content.purple {
+    border-color: var(--accent3-color);
+    background: var(--text-dark3);
+}
+.modal-content.yellow {
+    border-color: var(--accent5-color);
+    background: var(--text-dark5);
+}
+.modal-content.orange {
+    border-color: var(--accent6-color);
+    background: var(--text-dark6);
+}
+.modal-content.white {
+    border-color: var(--accent4-color);
+    background: var(--text-dark4);
+}
+
+.modal-content.red {
+    border-color: var(--accent7-color);
+    background: var(--text-dark7);
+}
+
+.modal-content.cyan {
+    border-color: var(--accent9-color);
+    background: var(--text-dark9);
+}
+
+.modal-content.indigo {
+    border-color: var(--accent8-color);
+    background: var(--text-dark8);
+}
+
+.modal-content.blue-green {
+    border-color: var(--accent1-color);
+    background: linear-gradient(180deg, var(--text-dark2), var(--text-dark1));
+}
+
+.modal-content.green-blue-purple {
+    border-color: var(--accent2-color);
+    background: linear-gradient(180deg, var(--text-dark2), var(--text-dark1), var(--text-dark3));
+}
+
+.modal-content.unknown, .modal-content.none {
+    border-color: #ccc;
+    background: #555;
+}
+
+.Master {
+    border: 7px solid transparent;
+    border-radius: 15px;
+    background: 
+        linear-gradient(#999, #999) padding-box,
+        linear-gradient(45deg, #FFD700, #b36300, #ff9500, #FFD700) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+}
+
+.Knight {
+    border: 7px solid transparent;
+    border-radius: 15px;
+    background:
+        linear-gradient(#999, #999) padding-box,
+        linear-gradient(45deg, #a0a0a0, #dcdcdc, #f5f5f5, #a0a0a0) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.Padawan {
+    border: 7px solid transparent;
+    border-radius: 15px;
+    background:
+        linear-gradient(#999, #999) padding-box,
+        linear-gradient(45deg, #cd7f32, #944821, #e39a5f, #cd7f32) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box
+}
+
+.Youngling {
+    border: 7px solid transparent;
+    border-radius: 15px;
+    background:
+        linear-gradient(#b1b1b1, #b1b1b1) padding-box,
+        linear-gradient(45deg, #7e7e7e, #9e9e9e, #6e6e6e, #b0b0b0) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.Unknown {
+    border: 7px solid #ccc;
+    border-radius: 15px;
+}
+/* Clone */
+
+.Legion_501 {
+    background: linear-gradient(180deg, var(--five-light), var(--five-color), var(--five-dark));
+    color: white;
+    border: none;
+}
+
+.Attack_Battalion_212 {
+    background: linear-gradient(180deg, var(--twelve-light), var(--twelve-color), var(--twelve-dark));
+    color: white;
+    border: none;
+}
+
+.Battalion_104 {
+    background: linear-gradient(180deg, var(--fourth-light), var(--fourth_color), var(--fourth-dark));
+    color: white;
+    border: none;
+}
+
+.Bad_Batch {
+    background: linear-gradient(180deg, var(--bad-light), var(--bad-color), var(--bad-dark));
+    color: white;
+    border: none;
+}
+
+.Coruscant {
+    background: linear-gradient(180deg, var(--guard-light), var(--guard-color), var(--guard-dark));
+    color: white;
+    border: none;
+}
+
+.Elite_Corps_41 {
+    background: linear-gradient(180deg, var(--elite-light), var(--elite-color), var(--elite-dark));
+    color: white;
+    border: none;
+}
+
+.Reconnaissance {
+    background: linear-gradient(180deg, var(--mobile-light), var(--mobile-color), var(--mobile-dark));
+    color: white;
+    border: none;
+}
+.Domino_Squad {
+    background: linear-gradient(180deg, var(--domino-light), var(--domino-color), var(--domino-dark));
+    color: white;
+    border: none;
+}
+
+.Squad_Seven {
+    background: linear-gradient(180deg, var(--seven-light), var(--seven-color), var(--seven-dark));
+    color: white;
+    border: none;
+}
+
+.Doom_Unit {
+    background: linear-gradient(180deg, var(--doom-light), var(--doom-color), var(--doom-dark));
+    color: white;
+    border: none;
+}
+
+.Eeth_Koth_Unit {
+    background: linear-gradient(180deg, var(--koth-light), var(--koth-color), var(--koth-dark));
+    color: white;
+    border: none;
+}
+
+.Rancor_Battalion {
+    background: linear-gradient(180deg, var(--rancor-light), var(--rancor-color), var(--rancor-dark));
+    color: white;
+    border: none;
+}
+
+.Star_Corps_327 {
+    background: linear-gradient(180deg, var(--star-light), var(--star-color), var(--star-dark));
+    color: white;
+    border: none;
+}
+
+.Outer_Rim_Garrison {
+    background: linear-gradient(180deg, var(--outer-light), var(--outer-color), var(--outer-dark));
+    color: white;
+    border: none;
+}
+
+/* Modals */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    z-index: 1000;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+}
+
+.modal-content {
+    background-color: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    margin: 15% auto;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+.open {
+    display: block;
+
+}
+
+.modal-body {
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+}
+
+.modal-border {
+    padding: 4px;
+    border: 4px solid gray;
+    border-radius: 14px;
+}
+
+
+.close-button {
+    float: right;
+    color: #888;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.saber-color {
+    height: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.close-button:hover, .close-button:focus {
+    background-color: rgba(0, 0, 0, 0.643);
+    color: #ffffffe5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+    #character-container, #clone-container, #mandalorian-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5em;
+        padding: 15px;
+
+    }
+
+    .selectors {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    body {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    
+}
+
+@media screen and (max-width: 700px) {
+    .selectors {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #character-container, #clone-container, #mandalorian-container {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding: 10px;
+        max-width: 300px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+
+    .button {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .close-button {
+        font-size: 40px;
+    }
+}

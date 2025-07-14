@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+<main>
+    <section id="mandalorian" class="content-section hidden">
+      <h1>Mandalorian Section</h1>
+      <div class="selectors">
+        <div class="clans">
+          <label for="clans">Clans:</label>
+          <select id="clan-tags" name="clan">
+            <option value="All"></option>
+            <option value="Clan Fett">Clan Fett</option>
+            <option value="Clan Mudhorn">Clan Mudhorn</option>
+            <option value="The Tribe">The Tribe</option>
+            <option value="Clan Kryze">Clan Kryze</option>
+            <option value="Clan Wren">Clan Wren</option>
+            <option value="Clan Vizsla">Clan Vizsla</option>
+            <option value="Clan Saxon">Clan Saxon</option>
+          </select>
+        </div>
+        <div class="groups">
+          <label for="groups">Groups:</label>
+          <select id="groups-tags" name="group">
+            <option value="All"></option>
+            <option value="Bounty Hunters' Guild">Bounty Hunters' Guild</option>
+            <option value="Confederacy of Independent Systems">Confederacy of Independent Systems</option>
+            <option value="Fett Gotra">Fett Gotra</option>
+            <option value="Death Watch">Death Watch</option>
+            <option value="Children of the Watch">Children of the Watch</option>
+            <option value="Shadow Collective">Shadow Collective</option>
+            <option value="Mandalore Resistance">Mandalore Resistance</option>
+            <option value="Mandalorian Resistance">Mandalorian Resistance</option>
+            <option value="Bo-Katan Kryze's Unit">Bo-Katan Kryze's Unit</option>
+            <option value="Rebel Alliance">Rebel Alliance</option>
+            <option value="Galactic Empire">Galactic Empire</option>
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+      <section id="mandalorian-container"></section>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
