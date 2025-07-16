@@ -9,7 +9,7 @@
     <label for="deathplace">Deathplace: <input type="text" name="deathplace"></label>
     <h3>Descriptive Information</h3>
     <label for="species" class="add_label">Species:</label>
-    <select id="species-tags" name="species" class="add_select">
+    <select id="species-tags" name="species" class="add_select" required>
         <option value=""></option>
         <option value="Human">Human</option>
         <option value="Wookiee">Wookiee</option>
@@ -118,15 +118,9 @@
         <option value="Indigo">Indigo</option>
         <option value="Orange">Orange</option>
     </select>
-    <h4>Jedi Master(s)</h4>
-    <div id="masters-wrapper">
-        <input type="text" name="masters" placeholder="Enter a Master">
-    </div>
-    <button type="button" onclick="addInput('masters-wrapper', 'masters')">Add Another Master</button>
+        <label for="master">Jedi Master: <input type="text" name="master"></label>
+        <label for="padawan">Jedi Padawan: <input type="text" name="padawan"></label>
 
-
-    <h4>Jedi Padawan(s)</h4>
-    <label for="padawans">Padawan: <input type="text" name="padawans"></label>
     <h3>Family Information</h3>
     <label for="father">Father: <input type="text" name="father"></label>
         <label for="mother">Mother: <input type="text" name="mother"></label>

@@ -14,10 +14,15 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.resolve();
 
+app.use(express.urlencoded({extended: true }));
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
+
+const jediList = [];
 
 // Middleware
 app.use((req, res, next) => {
@@ -79,6 +84,8 @@ if (NODE_ENV.includes('dev')) {
         console.error('Failed to start WebSocket server', error);
     }
 }
+
+await testConnection();
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

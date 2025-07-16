@@ -81,10 +81,8 @@
         <div class="species">
           <label for="species">Species:</label>
           <select id="species-tags" name="species">
-            <div class="option" data-value="Human">
-              <img src="images/profiles/Human.jpeg" />
-              <span>Human</span>
-            </div>
+            <option valeue="All"></option>
+            <option value="Human">Human</option>
             <option value="Twi'lek">Twi'lek</option>
             <option value="Mirialan">Mirialan</option>
             <option value="Zabrak">Zabrak</option>
@@ -202,15 +200,20 @@
       </div>
     </section>
     <section id="character-container">
-      <% jediList.forEach(function(item, index) { 
-        const colorClass = item.lightsaber ? item.lightsaber.toLowerCase() : "none";
-      %>
-        <div class="character <%= item.rank %>">
-          <img src="<%= item.imgSrc %>" alt="<%= item.name %>" />
-          <button class="<%= item.lightsaber %>"><a href="/index/<%= item.id %>"><%= item.name %></a></button>
-        </div> 
+      <% if (jedi && jedi.length > 0) { %>
+        <% jedi.forEach(function(item, index) { %> 
+          <div class="character <%= item.rank %>">
+            <img src="<%= item.imgSrc || '/images/profiles/default.jpeg' %>" alt="<%= item.name %>">
+            <button class="<%= item.lightsaber?.toLowerCase() || 'none' %>">
+              <a href="/index/<%= item.id || index %>"><%= item.name %></a>
+            </button>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No Jedi have been added yet.</p>
+      <% } %>
 
-      <% }); %>
+
       <button class="add-button-container">
         <a href="/jedi/add" class="add-button">➕ Add a New Jedi</a>
       </button>
